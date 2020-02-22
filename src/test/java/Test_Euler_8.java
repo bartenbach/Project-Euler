@@ -1,4 +1,5 @@
-import java.math.BigInteger;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class Test_Euler_8 {
 
@@ -22,5 +23,14 @@ public class Test_Euler_8 {
         + "84580156166097919133875499200524063689912560717606"
         + "05886116467109405077541002256983155200055935729725"
         + "71636269561882670428252483600823257530420752963450";
-    private BigInteger thousand_digit = new BigInteger(number);
+
+    @Test
+    public void testBaseCase() {
+        Assert.assertEquals(5832, Euler_8.getLargestConsecutiveProduct(number, 4));
+    }
+
+    @Test
+    public void solveProblem() {
+        System.out.println(Euler_8.getLargestConsecutiveProduct(number, 13));
+    }
 }
